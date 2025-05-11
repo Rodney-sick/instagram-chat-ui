@@ -1,8 +1,7 @@
 // Sample messages (replace with your Instagram chats)
 const messages = [
-    { sender: "John", text: "Hey, did you see the report?", time: "10:30 AM" },
-    { sender: "You", text: "Not yet, I'll check now.", time: "10:32 AM" },
-    { sender: "John", text: "Thanks! It's urgent.", time: "10:33 AM" }
+    { sender: "You", text: "This is my secret chat!", time: "2:30 PM" },
+    { sender: "Friend", text: "Looks professional!", time: "2:31 PM" }
 ];
 
 const container = document.getElementById('message-container');
