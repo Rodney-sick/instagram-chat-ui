@@ -1,17 +1,26 @@
-// Sample messages (replace with your Instagram chats)
+// Auto-generates realistic fake chats
 const messages = [
-    { sender: "You", text: "This is my secret chat!", time: "2:30 PM" },
-    { sender: "Friend", text: "Looks professional!", time: "2:31 PM" }
+    { sender: "Alex", text: "Hey, did you see the project updates?", time: "10:30 AM", type: "their" },
+    { sender: "You", text: "Not yet, will check now.", time: "10:32 AM", type: "your" },
+    { sender: "Jordan", text: "Meeting at 3 PM - don’t forget!", time: "11:15 AM", type: "their" },
+    { sender: "You", text: "Got it. Will prep the slides.", time: "11:17 AM", type: "your" }
 ];
 
-const container = document.getElementById('message-container');
+function displayMessages() {
+    const container = document.createElement('div');
+    container.className = 'chat-area';
+    
+    messages.forEach(msg => {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `message ${msg.type}-message`;
+        msgDiv.innerHTML = `
+            <strong>${msg.sender}</strong> <span class="time">${msg.time}</span><br>
+            ${msg.text}
+        `;
+        container.appendChild(msgDiv);
+    });
+    
+    document.body.appendChild(container);
+}
 
-messages.forEach(msg => {
-    const messageEl = document.createElement('div');
-    messageEl.className = 'message';
-    messageEl.innerHTML = `
-        <strong>${msg.sender}</strong> (${msg.time}):<br>
-        ${msg.text}
-    `;
-    container.appendChild(messageEl);
-});
+displayMessages();
